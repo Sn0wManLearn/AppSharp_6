@@ -40,7 +40,7 @@ internal class Calculator : ICalc
             Result /= value;
             ShowAndSaveResult();
         }
-        else Console.WriteLine("Делить на ноль нельзя!");
+        else throw new CalculatorDivideByZeroExeption("Нальзя делить на ноль!");
     }
 
     public void RaiseEvent()
