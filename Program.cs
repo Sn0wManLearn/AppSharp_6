@@ -40,23 +40,35 @@ class MyClass
                 Console.WriteLine("Число введено не корректно. Выполнение прекращено"); ;
                 break;
             }
-            switch (op)
+            
+            try
             {
-                case '+':
-                    calc.Sum(secondNum);
-                    break;
-                case '-':
-                    calc.Substruct(secondNum);
-                    break;
-                case '*':
-                    calc.Multiplay(secondNum);
-                    break;
-                case '/':
-                    calc.Divide(secondNum);
-                    break;
-                default:
-                    flag = false;
-                    break;
+                switch (op)
+                {
+                    case '+':
+                        calc.Sum(secondNum);
+                        break;
+                    case '-':
+                        calc.Substruct(secondNum);
+                        break;
+                    case '*':
+                        calc.Multiplay(secondNum);
+                        break;
+                    case '/':
+                        calc.Divide(secondNum);
+                        break;
+                    default:
+                        flag = false;
+                        break;
+                }
+            }
+            catch (CalculatorDivideByZeroExeption ex)
+            {
+                Console.WriteLine(ex);
+            }
+            catch (CalculateOperationCauseOverflowExeption ex)
+            {
+                Console.WriteLine(ex);
             }
         }
         while (flag);
