@@ -1,9 +1,9 @@
 ﻿namespace AppSharp_6;
 class MyClass
 {
-    static void Calculator_GotResult(object sendler, EventArgs eventArgs)
+    static void Calculator_GotResult(object sender, EventArgs eventArgs)
     {
-        Console.WriteLine($"{((Calculator)sendler).Result}");
+        Console.WriteLine($"{((Calculator)sender).Result}");
     }
     static void Main(string[] args)
     {
@@ -17,7 +17,7 @@ class MyClass
             if (calc.Results.Count == 0)
             {
                 Console.WriteLine("Введите число:");
-                if (!Int32.TryParse(Console.ReadLine(), out int firstNum))
+                if (!Double.TryParse(Console.ReadLine(), out double firstNum))
                 {
                     Console.WriteLine("Число введено не корректно. Выполнение прекращено");
                     break;
@@ -35,7 +35,7 @@ class MyClass
             Console.WriteLine();
 
             Console.WriteLine("Введите число:");
-            if (!Int32.TryParse(Console.ReadLine(), out int secondNum))
+            if (!Double.TryParse(Console.ReadLine(), out double secondNum))
             {
                 Console.WriteLine("Число введено не корректно. Выполнение прекращено"); ;
                 break;
